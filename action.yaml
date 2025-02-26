@@ -76,6 +76,11 @@ inputs:
     required: true
     default: 'github.com'
 
+  target_host_domain:
+    description: 'Domain name to be used in target repo URL.'
+    required: false
+    default: 'github.com'
+
   shallow_since:
     description: 'Length of time used when fetching shallow repo data, should match how often you perform a sync'
     required: true
