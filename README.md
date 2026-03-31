@@ -30,15 +30,16 @@ Configure the action with a branch on your `target` repo - the one you want to u
 
 ### Input Variables
 
-| Name                       |     Required?      | Default | Example                                  |
-| -------------------------- | :----------------: | ------- | ---------------------------------------- |
-| target_sync_repo           | :white_check_mark: |         |                                          |
-| target_sync_branch         | :white_check_mark: |         | 'master', 'main', 'my-branch'            |
-| target_repo_token          | :white_check_mark: |         | ${{ secrets.GITHUB_TOKEN }}              |
-| upstream_repo_access_token |                    |         | ${{ secrets.NAME_OF_TOKEN }}             |
-| upstream_sync_repo         | :white_check_mark: |         | 'aormsby/Fork-Sync-With-Upstream-action' |
-| upstream_sync_branch       | :white_check_mark: |         | 'master', 'main', 'my-branch'            |
-| test_mode                  |                    | false   | true / false                             |
+| Name                       |     Required?      | Default      | Example                                  |
+| -------------------------- | :----------------: | ------------ | ---------------------------------------- |
+| target_host_domain         |                    | 'github.com' | 'codeberg.org'                           |
+| target_sync_repo           | :white_check_mark: |              |                                          |
+| target_sync_branch         | :white_check_mark: |              | 'master', 'main', 'my-branch'            |
+| target_repo_token          | :white_check_mark: |              | ${{ secrets.GITHUB_TOKEN }}              |
+| upstream_repo_access_token |                    |              | ${{ secrets.NAME_OF_TOKEN }}             |
+| upstream_sync_repo         | :white_check_mark: |              | 'aormsby/Fork-Sync-With-Upstream-action' |
+| upstream_sync_branch       | :white_check_mark: |              | 'master', 'main', 'my-branch'            |
+| test_mode                  |                    |     false    | true / false                             |
 
 `target_sync_repo` can ***only*** be a repo in which you have owner access.
 If it corresponds to the repo in which the workflow is being used set `target_repo_token` as `${{ secrets.GITHUB_TOKEN }}`, otherwise `target_repo_token` should be a **[Private Access Token](https://github.com/aormsby/Fork-Sync-With-Upstream-action/wiki/Setup-Access-Token)** (`persist-credentials: false` is also **[needed](https://github.com/aormsby/Fork-Sync-With-Upstream-action/wiki/Configuration#private)**)
